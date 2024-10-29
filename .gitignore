@@ -1,0 +1,34 @@
+# Ignorar archivos de caché de Python
+source/__pycache__/
+
+# Ignorar entornos virtuales
+env/
+venv/
+
+# Ignorar migraciones de Django
+migrations/
+
+# Ignorar archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Ignorar archivos de dependencias
+*.egg-info/
+*.egg
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos temporales
+*.tmp
+
+# Ignorar archivos de configuración sensible
+*.env
+
+build/
+dist/
+
+# Ignorar instant client de oracle 19_14
+*.zip
+
+*.png
