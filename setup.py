@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 setup(
     name = 'setup_environment_bbdd',
-    version= '1.1.0',
+    version= '1.1.0', #git tag v1.1.0
     packages= find_packages(),# aqui se especifica el paquete o subpaquete que se quiere empaquetar
     description= 'paquete para la configuración de entorno para las conexiones a la base de datos de oracle en la maquina objetivo de quien ejecutara la aplicacion (SO windows)',
     author='Diana Pineda',

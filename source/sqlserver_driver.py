@@ -1,19 +1,24 @@
 
-import pyodbc
+from tkinter import messagebox
+import pyodbc # type: ignore
 
-def check_odbc_driver():
+def check_odbc_driver() -> bool:
+    """
+    Verifica si el controlador ODBC Driver 17 for SQL Server está instalado
+    """
     try:
-        print("Verificando controladores ODBC disponibles...")
-        drivers = pyodbc.drivers()
+        # print("Verificando controladores ODBC disponibles...")
+        drivers:list[str] = pyodbc.drivers()
         if "ODBC Driver 17 for SQL Server" in drivers:
-            print("El controlador ODBC Driver 17 for SQL Server está instalado.")
+            # print("El controlador ODBC Driver 17 for SQL Server está instalado.")
             return True
         else:
-            print("El controlador ODBC Driver 17 for SQL Server no está instalado.")
+            messagebox.showwarning("Advertencia","El controlador ODBC Driver 17 for SQL Server no está instalado.")
             return False
     except Exception as e:
-        print(f"Error al verificar los controladores ODBC: {e}")
+        messagebox.showerror("Error",f"Error al verificar los controladores ODBC de SQL Server: {e}")
         return False
+    
 #! este codigo hace que el antivirus elimine el archivo
 # def install_sql_server_odbc_driver():
 #     try:
