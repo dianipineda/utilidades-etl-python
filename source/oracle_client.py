@@ -32,7 +32,7 @@ def set_oracle_environment(oracle_path:Union[str,Path]) -> None:
     if 'ORACLE_HOME' not in os.environ:
         os.environ['ORACLE_HOME'] = oracle_path_str
 
-def install_oracle_client() -> None:
+def install_oracle_client() -> Union[None,str]:
     """
     Instala y configura el cliente de Oracle en la máquina.
 
@@ -51,7 +51,7 @@ def install_oracle_client() -> None:
 
     if not os.path.exists(zip_file_path):
         messagebox.showwarning("Advertencia",f"Archivo {zip_file_name} no encontrado en la carpeta del ejecutable.\nNo se encuentra el cliente de oracle, por lo tanto no se puede continuar con la ejecucion de la aplicación")
-        return None
+        return "no"
 
     extract_zip(zip_file_path, oracle_client_path)
 
@@ -73,7 +73,8 @@ def install_oracle_client() -> None:
         
         # Eliminar la subcarpeta después de mover los archivos
         os.rmdir(item_path)
-
     set_oracle_environment(oracle_client_path)
+    return None
+
 
     # print("Instalación y configuración completadas.")

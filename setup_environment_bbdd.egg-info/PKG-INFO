@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
 Name: setup-environment-bbdd
-Version: 1.1.0
+Version: 1.1.1
 Summary: paquete para la configuración de entorno para las conexiones a la base de datos de oracle en la maquina objetivo de quien ejecutara la aplicacion (SO windows)
 Author: Diana Pineda
