@@ -6,8 +6,15 @@ import subprocess
 import sys
 from pathlib import Path
 
-oracle_client_path:str = r"D:\clientes_bbdd\instantclient_19_24"
-zip_file_name:str = "instantclient_19_24.zip" 
+#TODO: Cambiar la ruta de oracle_client_path al temp
+# oracle_client_path:str = r"D:\clientes_bbdd\instantclient_19_24"
+# zip_file_name:str = "instantclient_19_24.zip" 
+# Obtener el directorio temporal del usuario
+temp_dir = os.getenv("TEMP")  # También podrías usar tempfile.gettempdir()
+oracle_client_folder = "instantclient_19_24"
+oracle_client_path: str = os.path.join(temp_dir, oracle_client_folder)
+zip_file_name: str = "instantclient_19_24.zip"
+zip_file_path: str = os.path.join(temp_dir, zip_file_name)
 
 def extract_zip(zip_path:Union[str,Path], extract_to:Union[str,Path]) -> None:
     """Extrae el archivo zip en la ubicación especificada"""
